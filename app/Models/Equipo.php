@@ -6,7 +6,7 @@ use CodeIgniter\Model;
 
 class Equipo extends Model
 {
-  protected $table = 'equipo';
+  protected $table = 'equipos';
   protected $primaryKey = 'id';
 
   protected $useAutoIncrement = true;

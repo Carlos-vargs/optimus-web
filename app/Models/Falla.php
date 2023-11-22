@@ -6,7 +6,7 @@ use CodeIgniter\Model;
 
 class Falla extends Model
 {
-  protected $table = 'falla';
+  protected $table = 'fallas';
   protected $primaryKey = 'id';
 
   protected $useAutoIncrement = true;

@@ -4,7 +4,7 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class Marcas extends Migration
+class TipoMantenimientos extends Migration
 {
     public function up()
     {
@@ -34,11 +34,11 @@ class Marcas extends Migration
 
         $this->forge->addKey('id', TRUE);
 
-        $this->forge->createTable('Marcas');
+        $this->forge->createTable('tipo_mantenimientos');
     }
 
     public function down()
     {
-        $this->forge->dropTable('Marcas');
+        $this->forge->dropTable('tipo_mantenimientos');
     }
 }

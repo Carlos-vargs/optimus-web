@@ -4,7 +4,7 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class Estados extends Migration
+class Marcas extends Migration
 {
     public function up()
     {
@@ -34,11 +34,11 @@ class Estados extends Migration
 
         $this->forge->addKey('id', TRUE);
 
-        $this->forge->createTable('Estados');
+        $this->forge->createTable('marcas');
     }
 
     public function down()
     {
-        $this->forge->dropTable('Estados');
+        $this->forge->dropTable('marcas');
     }
 }

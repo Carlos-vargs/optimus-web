@@ -49,17 +49,17 @@ class Mantenimientos extends Migration
 
         $this->forge->addKey('id', TRUE);
 
-        $this->forge->createTable('Mantenimientos');
+        $this->forge->createTable('mantenimientos');
 
         $this->forge->addForeignKey('idEquipo', 'Equipos', 'id', 'CASCADE', 'CASCADE');
-        $this->forge->addForeignKey('idTipoDeMantenimiento', 'TipoMantenimientos', 'id', 'CASCADE', 'CASCADE');
+        $this->forge->addForeignKey('idTipoDeMantenimiento', 'tipo_mantenimientos', 'id', 'CASCADE', 'CASCADE');
     }
 
     public function down()
     {
-        $this->forge->dropForeignKey('Mantenimientos', 'Mantenimientos_idEquipo_foreign');
-        $this->forge->dropForeignKey('Mantenimientos', 'Mantenimientos_idTipoDeMantenimiento_foreign');
+        $this->forge->dropForeignKey('mantenimientos', 'mantenimientos_idEquipo_foreign');
+        $this->forge->dropForeignKey('mantenimientos', 'mantenimientos_idTipoDeMantenimiento_foreign');
 
-        $this->forge->dropTable('Mantenimientos');
+        $this->forge->dropTable('mantenimientos');
     }
 }

@@ -34,11 +34,11 @@ class TipoComponentes extends Migration
 
         $this->forge->addKey('id', TRUE);
 
-        $this->forge->createTable('TipoComponentes');
+        $this->forge->createTable('tipo_componentes');
     }
 
     public function down()
     {
-        $this->forge->dropTable('TipoComponentes');
+        $this->forge->dropTable('tipo_componentes');
     }
 }

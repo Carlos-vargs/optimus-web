@@ -4,7 +4,7 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class TipoMantenimientos extends Migration
+class MantenimientoFalla extends Migration
 {
     public function up()
     {
@@ -15,30 +15,41 @@ class TipoMantenimientos extends Migration
                 'unsigned' => TRUE,
                 'auto_increment' => TRUE
             ],
-            'nombre' => [
+            'idMantenimiento' => [
+                'type' => 'INT',
+                'constraint' => 11,
+                'unsigned' => TRUE,
+            ],
+            'idFalla' => [
+                'type' => 'INT',
+                'constraint' => 11,
+                'unsigned' => TRUE,
+            ],
+            'observaciones' => [
                 'type' => 'VARCHAR',
-                'constraint' => '50',
+                'constraint' => '255',
+                'null' => TRUE,
             ],
             'created_at' => [
                 'type' => 'TIMESTAMP',
-                'null' => FALSE,
                 'default' => NULL
             ],
             'updated_at' => [
                 'type' => 'TIMESTAMP',
-                'null' => FALSE,
                 'default' => NULL,
                 'on_update' => NULL
             ]
         ]);
 
         $this->forge->addKey('id', TRUE);
+        $this->forge->addForeignKey('idMantenimiento', 'mantenimientos', 'id', 'CASCADE', 'CASCADE');
+        $this->forge->addForeignKey('idFalla', 'fallas', 'id', 'CASCADE', 'CASCADE');
 
-        $this->forge->createTable('TipoMantenimientos');
+        $this->forge->createTable('mantenimiento_falla');
     }
 
     public function down()
     {
-        $this->forge->dropTable('TipoMantenimientos');
+        $this->forge->dropTable('mantenimiento_falla');
     }
 }

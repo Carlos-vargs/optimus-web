@@ -48,17 +48,17 @@ class Componentes extends Migration
 
         $this->forge->addKey('id', TRUE);
 
-        $this->forge->createTable('Componentes');
+        $this->forge->createTable('componentes');
 
-        $this->forge->addForeignKey('idTipoComponente', 'TipoComponentes', 'id', 'CASCADE', 'CASCADE');
+        $this->forge->addForeignKey('idTipoComponente', 'tipo_componentes', 'id', 'CASCADE', 'CASCADE');
         $this->forge->addForeignKey('idMarca', 'Marcas', 'id', 'CASCADE', 'CASCADE');
     }
 
     public function down()
     {
-        $this->forge->dropForeignKey('Componentes', 'Componentes_idTipoComponente_foreign');
-        $this->forge->dropForeignKey('Componentes', 'Componentes_idMarca_foreign');
+        $this->forge->dropForeignKey('componentes', 'componentes_idTipoComponente_foreign');
+        $this->forge->dropForeignKey('componentes', 'componentes_idMarca_foreign');
 
-        $this->forge->dropTable('Componentes');
+        $this->forge->dropTable('componentes');
     }
 }

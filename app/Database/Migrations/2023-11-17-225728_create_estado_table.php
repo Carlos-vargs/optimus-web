@@ -4,40 +4,41 @@ namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
-class TipoEquipos extends Migration
+class Estados extends Migration
 {
     public function up()
     {
-        $this->forge->addField(array(
-            'id' => array(
+        $this->forge->addField([
+            'id' => [
                 'type' => 'INT',
                 'constraint' => 11,
                 'unsigned' => TRUE,
                 'auto_increment' => TRUE
-            ),
-            'nombre' => array(
+            ],
+            'nombre' => [
                 'type' => 'VARCHAR',
                 'constraint' => '50',
-            ),
-            'created_at' => array(
+            ],
+            'created_at' => [
                 'type' => 'TIMESTAMP',
                 'null' => FALSE,
                 'default' => NULL
-            ),
-            'updated_at' => array(
+            ],
+            'updated_at' => [
                 'type' => 'TIMESTAMP',
                 'null' => FALSE,
-                'default' => NULL
-            )
-        ));
+                'default' => NULL,
+                'on_update' => NULL
+            ]
+        ]);
 
         $this->forge->addKey('id', TRUE);
 
-        $this->forge->createTable('TipoEquipos');
+        $this->forge->createTable('estados');
     }
 
     public function down()
     {
-        $this->forge->dropTable('TipoEquipos');
+        $this->forge->dropTable('estados');
     }
 }

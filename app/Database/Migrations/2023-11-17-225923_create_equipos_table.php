@@ -59,19 +59,19 @@ class Equipos extends Migration
 
         $this->forge->addKey('id', TRUE);
 
-        $this->forge->createTable('Equipos');
+        $this->forge->createTable('equipos');
 
-        $this->forge->addForeignKey('idTipoEquipo', 'TipoEquipos', 'id');
+        $this->forge->addForeignKey('idTipoEquipo', 'tipo_equipos', 'id');
         $this->forge->addForeignKey('idMarca', 'Marcas', 'id');
         $this->forge->addForeignKey('idEstado', 'Estados', 'id');
     }
 
     public function down()
     {
-        $this->forge->dropForeignKey('Equipos', 'Equipos_idTipoEquipo_foreign');
-        $this->forge->dropForeignKey('Equipos', 'Equipos_idMarca_foreign');
-        $this->forge->dropForeignKey('Equipos', 'Equipos_idEstado_foreign');
+        $this->forge->dropForeignKey('equipos', 'equipos_idTipoEquipo_foreign');
+        $this->forge->dropForeignKey('equipos', 'equipos_idMarca_foreign');
+        $this->forge->dropForeignKey('equipos', 'equipos_idEstado_foreign');
 
-        $this->forge->dropTable('Equipos');
+        $this->forge->dropTable('equipos');
     }
 }

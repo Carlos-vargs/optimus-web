@@ -32,9 +32,9 @@ class Componente extends Model
 
   public function getEquipos($idComponente)
   {
-    $builder = $this->db->table('Equipo_Componente');
-    $builder->join('Equipos', 'Equipos.id = Equipo_Componente.idEquipo');
-    $builder->where('Equipo_Componente.idComponente', $idComponente);
+    $builder = $this->db->table('equipo_componente');
+    $builder->join('equipos', 'equipos.id = equipo_componente.idEquipo');
+    $builder->where('equipo_componente.idComponente', $idComponente);
     $query = $builder->get();
 
     return $query->getResultArray();

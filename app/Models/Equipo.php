@@ -21,9 +21,9 @@ class Equipo extends Model
 
   public function getComponentes($idEquipo)
   {
-    $builder = $this->db->table('Equipo_Componente');
-    $builder->join('Componentes', 'Componentes.id = Equipo_Componente.idComponente');
-    $builder->where('Equipo_Componente.idEquipo', $idEquipo);
+    $builder = $this->db->table('equipo_componente');
+    $builder->join('componentes', 'componentes.id = equipo_componente.idComponente');
+    $builder->where('equipo_componente.idEquipo', $idEquipo);
     $query = $builder->get();
 
     return $query->getResultArray();
